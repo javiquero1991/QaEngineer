@@ -19,8 +19,9 @@ describe('Tennis Website Tests', () => {
       cy.get('img[title="Shorts."]').should('be.exist');
       cy.get('img[title="Faldas para mujeres"]').should('be.exist');
       cy.get('img[title="Bermudas para hombres"]').should('be.exist');
-      cy.get('img[title="Jeans hombresl"]').should('not.exist');
+      cy.get('img[title="Jeans hombres"]').should('not.exist');
       });*/
+      
     it('should load Menu', () => {
       cy.get('img[title="Buzos"]').should('be.visible');
       cy.get('img[title="Camisetas"]').should('be.visible');
@@ -78,7 +79,6 @@ describe('Tennis Website Tests', () => {
     it('Add an item of clothing and checkout', () => {
       cy.get('img[title="Jeans"]', { timeout: 10000 }).should('be.visible').click({ waitForAnimations: false, force: true });
       cy.wait(25000); 
-      // Intentar hacer clic en el elemento deseado dentro del contenedor
       cy.get(':nth-child(2) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .vtex-stack-layout-0-x-stackContainer > .vtex-stack-layout-0-x-stackItem--first > .vtex-flex-layout-0-x-flexRow > .flex-none > .pr0-ns > .vtex-product-summary-2-x-imageWrapper > .dib > .vtex-product-summary-2-x-imageNormal', { timeout: 60000 })
         .should('be.visible')
         .click({ force: true }); 
