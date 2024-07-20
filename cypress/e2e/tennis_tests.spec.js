@@ -6,7 +6,7 @@ describe('Tennis Website Tests', () => {
 
     beforeEach(() => {
       cy.viewport('macbook-15');
-      cy.visit('https://www.tennis.com.co/');
+      cy.visit('https://www.tennis.com.co/',{timeout: 120000});
     });
 
     it('should load the homepage', () => {
@@ -21,12 +21,14 @@ describe('Tennis Website Tests', () => {
       cy.get('img[title="Bermudas para hombres"]').should('be.exist');
       cy.get('img[title="Jeans hombres"]').should('not.exist');
       });*/
-      
+
     it('should load Menu', () => {
       cy.get('img[title="Buzos"]').should('be.visible');
       cy.get('img[title="Camisetas"]').should('be.visible');
       cy.get('img[title="Jeans"]').should('be.visible');
     });
+
+    
     it('Add an item of clothing and click continue shopping', () => {
       cy.get('img[title="Shorts"]', { timeout: 60000 }).should('be.visible').click({ waitForAnimations: false, force: true });
       cy.wait(60000)
@@ -61,7 +63,7 @@ describe('Tennis Website Tests', () => {
 
     beforeEach(() => {
       cy.viewport('iphone-8');
-      cy.visit('https://www.tennis.com.co/', { timeout: 120000 });
+      cy.visit('https://www.tennis.com.co/', { timeout: 180000 });
     });
 
     it('should load the homepage', () => {
