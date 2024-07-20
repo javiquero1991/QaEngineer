@@ -2,6 +2,7 @@
 import 'cypress-wait-until';
 
 //pasos detallados para los steps de los test cases (mejora)
+//Se estaban implementando los pasos para relacionarlos con los casos de prueba 
 
 Cypress.Commands.add('checkHomepageTitle', (expectedTitle) => {
   cy.title().should('eq', expectedTitle, { timeout: 60000 });
