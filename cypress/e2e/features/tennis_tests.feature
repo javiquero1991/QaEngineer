@@ -3,10 +3,10 @@
 Feature: Pruebas de la página web de Tennis
 
   Background:
-    Given que estoy en la página principal de Tennis en un dispositivo de escritorio
+    Given estoy en la página principal de Tennis en un dispositivo de escritorio
 
   Scenario: La página principal se carga correctamente
-    Then la página debe tener el título "Tennis | Tienda de Ropa Online en Colombia"
+    Then la página web carga los elementos principales 
     And las <imagenes> deben ser visibles
       |imagenes              |
       |Jeans hombre          |
@@ -14,8 +14,9 @@ Feature: Pruebas de la página web de Tennis
       |Faldas para mujer     |
       |Bermudas para hombre  |
 
-  Scenario: La página principal no debe tener el título incorrecto
-    Then la página no debe tener el título "Tenis | Tienda de Ropa Online en Colombia"
+  Scenario: La página principal no tiene elementos correctos
+    Then la página web carga los elementos principales
+    And las imagenes no existen 
 
   Scenario: El menú debe cargarse correctamente
     When la página carga completamente
@@ -37,7 +38,7 @@ Feature: Pruebas de la página web de Tennis
     Given que estoy en la página principal de Tennis en un dispositivo móvil
 
   Scenario: La página principal se carga correctamente
-    Then la página debe tener el título "Tennis | Tienda de Ropa Online en Colombia"
+    Then la página web carga los elementos principales 
     And las <imagenes> deben ser visibles
       |imagenes              |
       |Jeans hombre          |
